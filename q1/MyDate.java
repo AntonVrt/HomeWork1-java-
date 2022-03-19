@@ -314,15 +314,14 @@ public class MyDate {
   }  
   public int compareDate(MyDate other)
   {
-    if(this.equals(other))
-    {
+    if (equals(other))
       return 0;
-    }
-    else if (this.day < other.day) 
+    /*year number *1000 > month number *100 > day number */
+    if ((this.year*1000+this.month*100+this.day)-(other.year*1000+other.month*100+other.day)>0)
     {
-      if()
-
+        return 1;
     }
+    return -1;
 
   }
 
