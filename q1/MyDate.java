@@ -61,13 +61,102 @@ public class MyDate {
             }        
     }    
 
-    // public MyDate(MyDate other)
-    // {
-    //     day = other.day;
-    //     month = other.month;
-    //     year = other.year;
+    public MyDate(MyDate other)
+    {
+        day = other.day;
+        month = other.month;
+        year = other.year;
 
-    // }
+    }
+
+    public int getDay() { return day;}
+
+    public int getMonth() { return month;}
+
+    public int getYear() { return year;}
+
+
+    public MyDate setDay( int d) {
+      if (isValid(year, month, d))
+      {
+        day=d;
+      }
+      return this;
+    }
+
+    public MyDate setMonth( int m) {
+      if (isValid(year, m, day))
+      {
+        month=m;
+      }
+      return this;
+    }
+
+    public MyDate setYear( int y) {
+      if (isValid(y, month, day))
+      {
+        year=y;
+      }
+      return this;
+    }
+
+      /**
+     * return a string representation 
+     * @return 
+     */
+    public String toString() {
+      String s= ""; 
+      if (this.day < 10)
+        s+="0";
+      s+=this.day+"/";
+      if (this.month < 10)
+        s+="0";
+      s+=this.month+"/"+this.year;
+      return s.toString();
+  }
+
+  public void printDate() {
+    System.out.println(this.toString());
+	}
+
+  public String getMonthName() {
+    String MonthName="";
+    switch (month) {
+      case 1:  MonthName = "January";
+               break;
+      case 2:  MonthName = "February";
+               break;
+      case 3:  MonthName = "March";
+               break;
+      case 4:  MonthName = "April";
+               break;
+      case 5:  MonthName = "May";
+               break;
+      case 6:  MonthName = "June";
+               break;
+      case 7:  MonthName = "July";
+               break;
+      case 8:  MonthName = "August";
+               break;
+      case 9:  MonthName = "September";
+               break;
+      case 10: MonthName = "October";
+               break;
+      case 11: MonthName = "November";
+               break;
+      case 12: MonthName = "December";
+               break;
+  }
+    return MonthName;
+  }
 
     
+  public void printMonthName() {
+    System.out.println(this.day+" " +this.getMonthName()+" "+this.year);
+  }
+
+  // public int getMonthDay()
+  // {
+
+  // }
 }
