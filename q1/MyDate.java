@@ -193,14 +193,7 @@ public class MyDate {
         }
         else
         {
-          NewDay = 1;
-          NewMonth++;
-          if(NewMonth>12)
-          {
-            NewMonth = 1;
-            NewYear++;
-          }
-          return new MyDate(NewDay,NewMonth,NewYear);
+         return NextMonthYear( NewDay, NewMonth, NewYear);
         }
 
       }
@@ -212,14 +205,7 @@ public class MyDate {
         }
         else
         {
-          NewDay = 1;
-          NewMonth++;
-          if(NewMonth>12)
-          {
-            NewMonth = 1;
-            NewYear++;
-          }
-          return new MyDate(NewDay,NewMonth,NewYear);
+          return NextMonthYear( NewDay, NewMonth, NewYear);
         }
       }
     }
@@ -231,14 +217,7 @@ public class MyDate {
       }
       else
       {
-        NewDay = 1;
-        NewMonth++;
-        if(NewMonth>12)
-        {
-          NewMonth = 1;
-          NewYear++;
-        }
-        return new MyDate(NewDay,NewMonth,NewYear);
+        return NextMonthYear( NewDay, NewMonth, NewYear);
       }
     }
     else
@@ -249,14 +228,7 @@ public class MyDate {
       }
       else
       {
-        NewDay = 1;
-        NewMonth++;
-        if(NewMonth>12)
-        {
-          NewMonth = 1;
-          NewYear++;
-        }
-        return new MyDate(NewDay,NewMonth,NewYear);
+        return NextMonthYear( NewDay, NewMonth, NewYear);
       }
 
     }
@@ -311,7 +283,8 @@ public class MyDate {
     }
     if(format!= "ddmmyyyy") 
       System.out.println(s);
-  }  
+  } 
+
   public int compareDate(MyDate other)
   {
     if(this.equals(other))
@@ -320,8 +293,15 @@ public class MyDate {
     }
     else if (this.day < other.day) 
     {
-      if()
+      if(this.month>other.month)
+      {
+        if(this.year<other.year)
+        {
+          return -1;
+        }
+      }
 
+      else if ()
     }
 
   }
@@ -337,6 +317,17 @@ public class MyDate {
       return false;
     }
     return false;
+  }
+  public MyDate NextMonthYear(int NewDay,int NewMonth,int NewYear)
+  {
+    NewDay = 1;
+          NewMonth++;
+          if(NewMonth>12)
+          {
+            NewMonth = 1;
+            NewYear++;
+          }
+          return new MyDate(NewDay,NewMonth,NewYear);
   }
 
 }
