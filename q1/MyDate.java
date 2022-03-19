@@ -1,5 +1,6 @@
 package q1;
 import java.time.LocalDate;
+
 public class MyDate {
 
     private int day;
@@ -35,7 +36,7 @@ public class MyDate {
         if ((day < 1) || (day > 31)) return false;
         switch (month) {
             case 1: return true;
-            case 2: return (isLeap(year) ? day <= 29 : day <= 28);
+            case 2: return (isLeapYear(year) ? day <= 29 : day <= 28);
             case 3: return true;
             case 4: return day < 31;
             case 5: return true;
@@ -49,7 +50,7 @@ public class MyDate {
         }
     }
 
-    public static boolean isLeap(int year) {
+    public static boolean isLeapYear(int year) {
             if (year % 4 != 0) {
               return false;
             } else if (year % 400 == 0) {
@@ -155,8 +156,187 @@ public class MyDate {
     System.out.println(this.day+" " +this.getMonthName()+" "+this.year);
   }
 
-  // public int getMonthDay()
-  // {
+  public int getMonthDay()
+  {
+    if (this.month == 2) { // February
+      if (isLeapYear(this.year)) 
+      {
+        return 29;
+      } 
+      else
+      {
+        return 28;
+      }
+    } 
+    else if (month == 4 || month == 6 ||month == 9 || month == 11) 
+    {
+      return 30;
+    } 
+    else 
+    {
+      return 31;
+    }
+  }
 
-  // }
+  public MyDate nextDate()
+  {
+    int NewDay = this.day+1;
+    int NewMonth = this.month;
+    int NewYear = this.year;
+    if (this.month == 2)
+    {
+      if(isLeapYear(this.year))
+      {
+        if(NewDay<=29)
+        {
+          return new MyDate(NewDay,NewMonth,NewYear);
+        }
+        else
+        {
+          NewDay = 1;
+          NewMonth++;
+          if(NewMonth>12)
+          {
+            NewMonth = 1;
+            NewYear++;
+          }
+          return new MyDate(NewDay,NewMonth,NewYear);
+        }
+
+      }
+      else
+      {
+        if(NewDay<=28)
+        {
+          return new MyDate(NewDay,NewMonth,NewYear);
+        }
+        else
+        {
+          NewDay = 1;
+          NewMonth++;
+          if(NewMonth>12)
+          {
+            NewMonth = 1;
+            NewYear++;
+          }
+          return new MyDate(NewDay,NewMonth,NewYear);
+        }
+      }
+    }
+    else if (month == 4 || month == 6 ||month == 9 || month == 11) 
+    {
+      if(NewDay<=30)
+      {
+        return new MyDate(NewDay,NewMonth,NewYear);
+      }
+      else
+      {
+        NewDay = 1;
+        NewMonth++;
+        if(NewMonth>12)
+        {
+          NewMonth = 1;
+          NewYear++;
+        }
+        return new MyDate(NewDay,NewMonth,NewYear);
+      }
+    }
+    else
+    {
+      if(NewDay<=31)
+      {
+        return new MyDate(NewDay,NewMonth,NewYear);
+      }
+      else
+      {
+        NewDay = 1;
+        NewMonth++;
+        if(NewMonth>12)
+        {
+          NewMonth = 1;
+          NewYear++;
+        }
+        return new MyDate(NewDay,NewMonth,NewYear);
+      }
+
+    }
+  }
+  public void printFormatDate(String format)
+  {
+    String s= "";
+    switch (format) 
+    {
+      case "ddmmyyyy":
+        this.printDate();
+        break;
+
+      case "ddmmyy":
+        if (this.day < 10)
+          s+="0";
+        s+=this.day+"/";
+        if (this.month < 10)
+          s+="0";
+        s+=this.month+"/"+ (this.year % 100);
+        
+        break;
+
+      case "mmddyyyy":  
+        if (this.month < 10)
+          s+="0";
+        s+=this.month +"/";
+        if (this.day < 10)
+          s+="0";
+        s+=this.day+"/" + this.year;
+        
+        break;
+
+      case "yyyymmdd":
+        s+=this.year +"/";
+        if (this.month < 10)
+          s+="0";
+        s+=this.month +"/";
+        if (this.day < 10)
+          s+="0";
+        s+=this.day;
+        
+        break;
+
+      case "ddMMyyyy": 
+        if (this.day < 10)
+        s+="0";
+        s+=this.day+"/";
+        s+= this.getMonthName() + "/" + this.year;
+
+        break;
+    }
+    if(format!= "ddmmyyyy") 
+      System.out.println(s);
+  }  
+  public int compareDate(MyDate other)
+  {
+    if(this.equals(other))
+    {
+      return 0;
+    }
+    else if (this.day < other.day) 
+    {
+      if()
+
+    }
+
+  }
+
+  public boolean equals(Object other)
+  {
+    if(other instanceof MyDate)
+    {
+      if(this.day == ((MyDate)other).day && this.month == ((MyDate)other).month && this.year == ((MyDate)other).year)
+      {
+        return true;
+      }
+      return false;
+    }
+    return false;
+  }
+
 }
