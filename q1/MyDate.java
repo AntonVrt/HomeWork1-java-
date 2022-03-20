@@ -30,13 +30,13 @@ public class MyDate {
         this.day = d;  
         }
     }
-    public static boolean isValid(int year, int month, int day) {
+    public boolean isValid(int year, int month, int day) {
         if (year < 0) return false;
         if ((month < 1) || (month > 12)) return false;
         if ((day < 1) || (day > 31)) return false;
         switch (month) {
             case 1: return true;
-            case 2: return (isLeapYear(year) ? day <= 29 : day <= 28);
+            case 2: return (this.isLeapYear() ? day <= 29 : day <= 28);
             case 3: return true;
             case 4: return day < 31;
             case 5: return true;
@@ -50,12 +50,12 @@ public class MyDate {
         }
     }
 
-    public static boolean isLeapYear(int year) {
-            if (year % 4 != 0) {
+    public boolean isLeapYear() {
+            if (this.year % 4 != 0) {
               return false;
-            } else if (year % 400 == 0) {
+            } else if (this.year % 400 == 0) {
               return true;
-            } else if (year % 100 == 0) {
+            } else if (this.year % 100 == 0) {
               return false;
             } else {
               return true;
@@ -123,29 +123,29 @@ public class MyDate {
   public String getMonthName() {
     String MonthName="";
     switch (month) {
-      case 1:  MonthName = "January";
+      case 1:  MonthName = "Jan";
                break;
-      case 2:  MonthName = "February";
+      case 2:  MonthName = "Feb";
                break;
-      case 3:  MonthName = "March";
+      case 3:  MonthName = "Mar";
                break;
-      case 4:  MonthName = "April";
+      case 4:  MonthName = "Apr";
                break;
       case 5:  MonthName = "May";
                break;
-      case 6:  MonthName = "June";
+      case 6:  MonthName = "Jun";
                break;
-      case 7:  MonthName = "July";
+      case 7:  MonthName = "Jul";
                break;
-      case 8:  MonthName = "August";
+      case 8:  MonthName = "Aug";
                break;
-      case 9:  MonthName = "September";
+      case 9:  MonthName = "Sep";
                break;
-      case 10: MonthName = "October";
+      case 10: MonthName = "Oct";
                break;
-      case 11: MonthName = "November";
+      case 11: MonthName = "Nov";
                break;
-      case 12: MonthName = "December";
+      case 12: MonthName = "Dec";
                break;
   }
     return MonthName;
@@ -159,7 +159,7 @@ public class MyDate {
   public int getMonthDay()
   {
     if (this.month == 2) { // February
-      if (isLeapYear(this.year)) 
+      if (this.isLeapYear()) 
       {
         return 29;
       } 
@@ -185,7 +185,7 @@ public class MyDate {
     int NewYear = this.year;
     if (this.month == 2)
     {
-      if(isLeapYear(this.year))
+      if(this.isLeapYear())
       {
         if(NewDay<=29)
         {
@@ -276,8 +276,8 @@ public class MyDate {
       case "ddMMyyyy": 
         if (this.day < 10)
         s+="0";
-        s+=this.day+"/";
-        s+= this.getMonthName() + "/" + this.year;
+        s+=this.day+" ";
+        s+= this.getMonthName() + " " + this.year;
 
         break;
     }
@@ -310,16 +310,17 @@ public class MyDate {
     }
     return false;
   }
+  
   public MyDate NextMonthYear(int NewDay,int NewMonth,int NewYear)
   {
     NewDay = 1;
-          NewMonth++;
-          if(NewMonth>12)
-          {
-            NewMonth = 1;
-            NewYear++;
-          }
-          return new MyDate(NewDay,NewMonth,NewYear);
+    NewMonth++;
+    if(NewMonth>12)
+      {
+        NewMonth = 1;
+        NewYear++;
+      }
+    return new MyDate(NewDay,NewMonth,NewYear);
   }
 
 }
