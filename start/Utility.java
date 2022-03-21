@@ -8,11 +8,9 @@ public class Utility {
         int i = 0;
         while (i < array.length) {
             for (int j = 0; j < array.length; j++)
-                if ((array[i].getDay() + array[i].getMonth() + array[i].getYear()) == (array[j].getDay()
-                        + array[j].getMonth() + array[j].getYear() - 1)) {
+                if (array[i].nextDate().equals(array[j])) {
                     for (int k = 0; k < array.length; k++)
-                        if ((array[i].getDay() + array[i].getMonth() + array[i].getYear()) == (array[k].getDay()
-                                + array[k].getMonth() + array[k].getYear() - 2))
+                        if ((array[j].nextDate().equals(array[k])))
                             return array[i];
                 }
             i++;
