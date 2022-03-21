@@ -15,21 +15,20 @@ public class MyDate {
     year = date.getYear();
   }
 
-  public MyDate(int d, int m, int y) {
-
-    LocalDate date = LocalDate.now();
-    if (!isValid(y, m, d)) {
-      this.year = date.getYear();
-      this.month = date.getMonthValue();
-      this.day = date.getDayOfMonth();
-    } else {
+  public MyDate(int d, int m, int y) 
+  {    
       this.year = y;
       this.month = m;
       this.day = d;
+    if (!isValid(d, m, y)) { 
+      LocalDate date = LocalDate.now();
+      this.year = date.getYear();
+      this.month = date.getMonthValue();
+      this.day = date.getDayOfMonth();
     }
   }
 
-  public boolean isValid(int year, int month, int day) {
+  public boolean isValid(int day, int month, int year) {
     if (year < 0)
       return false;
     if ((month < 1) || (month > 12))
@@ -40,7 +39,7 @@ public class MyDate {
       case 1:
         return true;
       case 2:
-        return (this.isLeapYear() ? day <= 29 : day <= 28);
+        return (isLeapYear() ? day <= 29 : day <= 28);
       case 3:
         return true;
       case 4:
@@ -77,9 +76,9 @@ public class MyDate {
   }
 
   public MyDate(MyDate other) {
-    day = other.day;
-    month = other.month;
-    year = other.year;
+    day = other.getDay();
+    month = other.getMonth();
+    year = other.getYear();
 
   }
 
