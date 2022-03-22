@@ -37,5 +37,53 @@ public class Temperature {
     {
         this.scale_date = new MyDate(date);
     }
+    public String toString() {
+        String s = "";
+        if (this.scale < 0)
+            s += "-";
+        else
+            s+= "+";
+        s += this.scale + "°" + "C" + " ";   
+        s += this.scale_date.toString();
+        return s.toString();
+      }
 
+    public void printTemp()
+    {
+        String s = "";
+        if (this.scale < 0)
+            s += "-";
+        else
+            s+= "+";
+        s += this.scale + "°" + "C" + " "; 
+        System.out.println(s);
+    }
+
+    public void printTempFull()
+    {
+        System.out.println(this.toString());
+    }
+    public Temperature compareTemp(Temperature other)
+    {
+        if(this.scale >= other.scale)
+        {
+            return this;
+        }
+        else
+            return other;
+
+    }
+    public boolean equals(Object other) {
+        if (other instanceof Temperature)
+        {   
+            if (this.scale == ((Temperature) other).scale && this.scale_date.equals(((Temperature) other).scale_date))
+                return true;
+            else
+                return false;
+        }
+
+        return false;
+      }
+
+      
 }
