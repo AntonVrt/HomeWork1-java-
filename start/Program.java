@@ -27,8 +27,6 @@ public class Program {
         System.out.println(Utility.threeDates(arr));
         arr[3]=new MyDate();
         System.out.println(Utility.threeDates(arr));
-            
-
 
     }
     

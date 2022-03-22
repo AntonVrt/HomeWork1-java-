@@ -20,9 +20,22 @@ public class Temperature {
 
     public Temperature(Temperature other)
     {
-        this.scale=other.scale;
-        // this.scale_date = new MyDate(other.day,other.MyDate.getMonth());
+        this.scale=other.getscale();
+        this.scale_date = new MyDate(other.scale_date.getDay(),other.scale_date.getMonth(),other.scale_date.getYear());
     }
 
-    
+    public double getscale(){return this.scale;}
+
+    public MyDate getscale_date(){return this.scale_date;}
+
+    public void setscale(double scale)
+    {
+        this.scale = scale;
+    }
+
+    public void setscale_date(MyDate date) 
+    {
+        this.scale_date = new MyDate(date);
+    }
+
 }
