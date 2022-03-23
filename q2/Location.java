@@ -135,5 +135,40 @@ public class Location
                 max=this.temp[i];
         }
         return max;
-    }    
+    }
+
+    	/**
+	 * this method return a string with the location name and Temperature array 
+	 * @return location name and Temperature type array in a string form
+	 */
+	public String toString() 
+	{
+        String s="location name:"+this.name;
+        if (this.temp==null)
+            s+=" no temperature measurements available.";
+        else
+        {
+            s+=" temperature measurements:";
+            for (Temperature t : this.temp)
+                    s+=t.toString()+"|";
+        } 
+        return s;
+	}
+
+    public boolean equals(Object other) 
+    {
+        if (other instanceof Location) {
+            if (this.name!=((Location) other).name) {
+              return false;
+            }
+            if ((this.temp==null &&  ((Location) other).temp!=null) || (this.temp!=null &&  ((Location) other).temp==null))
+                return false;
+            if (this.temp!=null && ((Location) other).temp!=null )
+                if (this.temp.length==((Location) other).temp.length)
+                    for(int i=0;i<this.temp.length;i++)
+                        if (!(this.temp[i].equals(((Location) other).temp[i])))
+                            return false;
+          }
+        return true;
+    }
 }

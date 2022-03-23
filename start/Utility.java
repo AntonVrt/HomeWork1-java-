@@ -2,9 +2,8 @@ package start;
 
 import q1.MyDate;
 import q2.Temperature;
+import q3.Swimmable;
 import q2.Location;
-
-
 import java.util.Dictionary;
 import java.util.Hashtable;
 
@@ -44,5 +43,16 @@ public class Utility {
                     max=i;
         }
         return max;
+    }
+
+    public static void printAquarium(Swimmable [] array)
+    {
+        final Object[][] table = new String[array.length][];
+        for (int i=0;i<array.length;i++)
+            table[i] = new String[] { array[i].getAnimalName(), array[i].getColor(), String.valueOf(array[i].getSize()), String.valueOf(array[i].getEatCount()) };
+
+        for (final Object[] row : table) {
+            System.out.format("%15s%15s%15s%15s%n", row);
+        }
     }
 }
