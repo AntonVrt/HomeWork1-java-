@@ -1,14 +1,17 @@
 package q2;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Location 
 {
     private String name;
-    private Temperature temp[];
+    private Temperature[] temp;
 
     public Location(String name)
     {
         this.name = name;
-        this.temp = null;
+        this.temp=null;
     }
     public Location(Location other)
     {
@@ -20,7 +23,7 @@ public class Location
             this.temp[i] = new  Temperature(other.temp[i]);
         }
     }
-    public String getname(){return this.name;}
+    public String getName(){return this.name;}
 
     public Temperature[] gettemperature(){return this.temp;}
 
@@ -37,7 +40,100 @@ public class Location
             this.temp[i] = new  Temperature(temperature[i]);
         }
     }
-
-
     
+    public void printLocation ()
+    {
+        String s=this.name;
+        if (this.temp==null)
+            s+=" no temperature measurements available.";
+        else
+        {
+            s+=" temperature measurements:";
+            for (Temperature t : this.temp)
+                    s+=t.toString()+"|";
+        }
+        
+        System.out.println(s);
+    }
+
+    public void printLocation (double range)
+    {
+        String s=this.name;
+        if (this.temp==null)
+            s+=" no temperature measurements available.";
+        else
+        {
+            s+=" temperature measurements:";
+            for (Temperature t : this.temp)
+                if (t.getscale()<=this.getAverage()+range && t.getscale()>=this.getAverage()-range)
+                    s+=t.toString()+"|";
+        }
+        
+        System.out.println(s);
+    }
+
+    public double getAverage()
+    {
+        if (this.temp==null)
+            return 0;
+        
+        double sum=0;
+        double avg=0;
+        for (int i=0;i<this.temp.length;i++)
+            sum+=this.temp[i].getscale();
+        avg=sum/this.temp.length;
+        return avg;
+    }
+
+    public void addTemp (double t,int d,int m,int y)
+    {
+        if (this.temp!=null)
+        {
+            Temperature[] newtemp = new Temperature [temp.length+1];
+            int i;
+            for (i=0;i<temp.length;i++)
+                newtemp[i]=temp[i];
+            newtemp[i]=new Temperature(t,d,m,y);
+            this.temp=newtemp;
+        }
+        else
+        {
+            Temperature[] newtemp = new Temperature [1];
+            newtemp[0]=new Temperature(t,d,m,y);
+            this.temp=newtemp;
+        }
+    }
+
+    public void addTemp (double t)
+    {
+        if (this.temp!=null)
+        {
+            Temperature[] newtemp = new Temperature [temp.length+1];
+            int i;
+            for (i=0;i<temp.length;i++)
+                newtemp[i]=temp[i];
+            newtemp[i]=new Temperature(t);
+            this.temp=newtemp;
+
+        }
+        else
+        {
+            Temperature[] newtemp = new Temperature [1];
+            newtemp[0]=new Temperature(t);
+            this.temp=newtemp;
+        }
+    }
+
+    public Temperature getMax ()
+    {
+        if (this.temp==null)
+            return null;
+        Temperature max = this.temp[0];
+        for (int i=1;i<this.temp.length;i++)
+        {
+            if (this.temp[i].getscale()>max.getscale())
+                max=this.temp[i];
+        }
+        return max;
+    }    
 }

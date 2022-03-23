@@ -1,6 +1,9 @@
 package start;
 
 import q1.MyDate;
+import q2.Temperature;
+import q2.Location;
+
 
 import java.util.Dictionary;
 import java.util.Hashtable;
@@ -28,5 +31,18 @@ public class Utility {
             }
         }
         return new MyDate();
+    }
+
+    public static int getMaxTemp (Location [] array)
+    {
+        int max=0;
+        int i;
+        for(i=1;i<array.length;i++)
+        {
+            if (array[i].getMax()!=null)
+                if (array[i].getAverage()>array[max].getAverage())
+                    max=i;
+        }
+        return max;
     }
 }
