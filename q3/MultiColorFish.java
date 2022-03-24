@@ -1,6 +1,5 @@
 package q3;
 
-import java.util.Random;
 
 public class MultiColorFish extends Fish {
 
@@ -14,8 +13,6 @@ public class MultiColorFish extends Fish {
 
     public void changeFish(int size){
         super.changeFish(size);
-        Random rand = new Random();
-        int col = rand.nextInt(1,9);
-        super.changeColor(col);
+        super.changeColor();
     }
 }

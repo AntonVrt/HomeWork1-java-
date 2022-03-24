@@ -31,13 +31,10 @@ public abstract class Swimmable {
     public abstract int getSize();
     public abstract String getColor();
     public abstract void eatInc();
-    public abstract int getEAT_DISTANCE();
+    
 
-    public String toString()
-    {
-        return "typs:"+getAnimalName()+"\n"+"color:"+getColor()+"\n"+ "size:"+getSize()+"\n"+"EatCount:"+getEatCount()+"\n"+"horSpeed:"+
-        this.horSpeed+"\n"+"verSpeed:"+this.verSpeed+"\n"+ "EAT_DISTANCE:" + getEAT_DISTANCE();
-    }
+    public abstract String toString();
+    
     // public abstract boolean equals(Fish other);
     
 }

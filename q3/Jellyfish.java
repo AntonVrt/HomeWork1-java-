@@ -1,7 +1,7 @@
 package q3;
 
 public class Jellyfish extends Swimmable {
-    private int EAT_DISTANCE;
+    private int EAT_DISTANCE = 8;
     private int size;
     private int col;
     private int eatCount;
@@ -12,7 +12,6 @@ public class Jellyfish extends Swimmable {
 
     public Jellyfish(int size, int x_front, int y_front,int verSpeed, int horSpeed, int col)
     {
-        this.EAT_DISTANCE=8;
         this.size=size;
         this.col=col;
         this.x_front=x_front;
@@ -63,13 +62,31 @@ public class Jellyfish extends Swimmable {
 
     public int getSize() {return this.size;}
 
-    public void eatInc() {this.eatCount+=1;}
+    public void eatInc() 
+    {
+      this.eatCount+=1;
+      if (this.eatCount>this.EAT_DISTANCE)
+      {
+        this.eatCount = 0;
+        this.size++;
+      }
+    }
 
     public void changeJellyfish(int size){this.size=size;}
 
-    public void changeColor(int col){this.col=col;}
+    public void changeColor()
+    {
+      this.col++;
+      if(this.col >9)
+        this.col =1;
+    }
 
-    public int getEAT_DISTANCE() {return this.EAT_DISTANCE;}
+    
+    public String toString() {
+      return "typs:"+getAnimalName()+"\n"+"color:"+getColor()+"\n"+ "size:"+getSize()+"\n"+"EatCount:"+getEatCount()+"\n"+"horSpeed:"+
+      super.gethorSpeed()+"\n"+"verSpeed:"+super.getverSpeed()+"\n"+ "EAT_DISTANCE:" + this.EAT_DISTANCE;
+    }
+
 
     
 }
