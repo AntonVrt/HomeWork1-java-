@@ -3,7 +3,7 @@ package q3;
 public class UnusualFish extends Fish {
     private int factor;
 
-    public UnusualFish(int size, int x_front, int y_front, int verSpeed, int horSpeed, int col,int factor) {
+    public UnusualFish(int size, int x_front, int y_front,int horSpeed, int verSpeed, int col,int factor) {
         super(size, x_front, y_front, verSpeed, horSpeed, col);
         this.factor=factor;
     }

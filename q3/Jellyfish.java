@@ -1,7 +1,7 @@
 package q3;
 
 public class Jellyfish extends Swimmable {
-    private int EAT_DISTANCE = 8;
+    private int EAT_DISTANCE = 4;
     private int size;
     private int col;
     private int eatCount;
@@ -10,7 +10,7 @@ public class Jellyfish extends Swimmable {
     private int x_dir;
     private int y_dir;
 
-    public Jellyfish(int size, int x_front, int y_front,int verSpeed, int horSpeed, int col)
+    public Jellyfish(int size, int x_front, int y_front,int horSpeed, int verSpeed, int col)
     {
         this.size=size;
         this.col=col;
