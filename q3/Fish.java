@@ -1,5 +1,7 @@
 package q3;
 
+import javax.lang.model.util.ElementScanner6;
+
 public class Fish extends Swimmable {
     private int EAT_DISTANCE=10;
     private int size;
@@ -63,6 +65,14 @@ public class Fish extends Swimmable {
 
     public int getSize() {return this.size;}
 
+    public int getx_front() {return this.x_front;}
+
+    public int gety_front() {return this.y_front;}
+
+    public int getx_dir() {return this.x_dir;}
+
+    public int gety_dir() {return this.y_dir;}
+
     public void eatInc()
      {
       this.eatCount+=1;
@@ -89,5 +99,19 @@ public class Fish extends Swimmable {
         super.gethorSpeed()+"\n"+"verSpeed:"+super.getverSpeed()+"\n"+ "EAT_DISTANCE:" + this.EAT_DISTANCE;
     }
     
+    public boolean equals(Object other)
+    {
+      if(other instanceof Fish)
+      {
+        if(super.gethorSpeed() == ((Fish)other).gethorSpeed() && super.getverSpeed() == ((Fish)other).getverSpeed() && this.getColor().equals(((Fish)other).getColor()) == true && this.getSize() == ((Fish)other).getSize() && this.getEatCount() == ((Fish)other).getEatCount() && 
+        this.getx_front() == ((Fish)other).getx_front() && this.gety_front() == ((Fish)other).gety_front() && this.getx_dir() == ((Fish)other).getx_dir() && this.gety_dir() == ((Fish)other).gety_dir())
+          return true;
+        else  
+          return false;
+      }
+      else  
+        return false;
+    }
+
 
 }

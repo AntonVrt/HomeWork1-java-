@@ -87,6 +87,18 @@ public class Jellyfish extends Swimmable {
       super.gethorSpeed()+"\n"+"verSpeed:"+super.getverSpeed()+"\n"+ "EAT_DISTANCE:" + this.EAT_DISTANCE;
     }
 
+    public boolean equals(Object other)
+    {
+      if(other instanceof Jellyfish)
+      {
+        if(super.equals())
+
+        
+      }
+      else  
+        return false;
+      
+    {}
 
     
 }

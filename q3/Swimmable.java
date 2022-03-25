@@ -34,7 +34,6 @@ public abstract class Swimmable {
     
 
     public abstract String toString();
-    
-    // public abstract boolean equals(Fish other);
+    public abstract boolean equals(Object other);
     
 }
