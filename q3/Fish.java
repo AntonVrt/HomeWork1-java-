@@ -3,7 +3,7 @@ package q3;
 import javax.lang.model.util.ElementScanner6;
 
 public class Fish extends Swimmable {
-    private int EAT_DISTANCE=10;
+    private int EAT_DISTANCE=4;
     private int size;
     private int col;
     private int eatCount;
@@ -12,7 +12,7 @@ public class Fish extends Swimmable {
     private int x_dir;
     private int y_dir;
 
-    public Fish(int size, int x_front, int y_front,int verSpeed, int horSpeed, int col)
+    public Fish(int size, int x_front, int y_front,int horSpeed, int verSpeed, int col)
     {
         super(horSpeed,verSpeed);
         this.size=size;

@@ -5,7 +5,7 @@ public class MultiColorFish extends Fish {
 
 
 
-    public MultiColorFish(int size, int x_front, int y_front, int verSpeed, int horSpeed, int col) {
+    public MultiColorFish(int size, int x_front, int y_front,int horSpeed, int verSpeed, int col) {
         super(size, x_front, y_front, verSpeed, horSpeed, col);
     }
 
