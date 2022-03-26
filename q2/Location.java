@@ -27,11 +27,19 @@ public class Location
 
     public Temperature[] gettemperature(){return this.temp;}
 
+    
+    /** 
+     * @param name
+     */
     public void setname(String name)
     {
         this.name = name;
     }
 
+    
+    /** 
+     * @param temperature
+     */
     public void settemperature(Temperature[] temperature)
     {
         this.temp = new Temperature[temperature.length];
@@ -56,6 +64,10 @@ public class Location
         System.out.println(s);
     }
 
+    
+    /** 
+     * @param range
+     */
     public void printLocation (double range)
     {
         String s=this.name;
@@ -72,6 +84,10 @@ public class Location
         System.out.println(s);
     }
 
+    
+    /** 
+     * @return double
+     */
     public double getAverage()
     {
         if (this.temp==null)
@@ -85,6 +101,13 @@ public class Location
         return avg;
     }
 
+    
+    /** 
+     * @param t
+     * @param d
+     * @param m
+     * @param y
+     */
     public void addTemp (double t,int d,int m,int y)
     {
         if (this.temp!=null)
@@ -104,6 +127,10 @@ public class Location
         }
     }
 
+    
+    /** 
+     * @param t
+     */
     public void addTemp (double t)
     {
         if (this.temp!=null)
@@ -124,6 +151,10 @@ public class Location
         }
     }
 
+    
+    /** 
+     * @return Temperature
+     */
     public Temperature getMax ()
     {
         if (this.temp==null)
@@ -155,6 +186,11 @@ public class Location
         return s;
 	}
 
+    
+    /** 
+     * @param other
+     * @return boolean
+     */
     public boolean equals(Object other) 
     {
         if (other instanceof Location) {

@@ -28,6 +28,13 @@ public class MyDate {
     }
   }
 
+  
+  /** 
+   * @param day
+   * @param month
+   * @param year
+   * @return boolean
+   */
   public boolean isValid(int day, int month, int year) {
     if (year < 0)
       return false;
@@ -63,6 +70,10 @@ public class MyDate {
     }
   }
 
+  
+  /** 
+   * @return boolean
+   */
   public boolean isLeapYear() {
     if (this.year % 4 != 0) {
       return false;
@@ -82,18 +93,35 @@ public class MyDate {
 
   }
 
+  
+  /** 
+   * @return int
+   */
   public int getDay() {
     return day;
   }
 
+  
+  /** 
+   * @return int
+   */
   public int getMonth() {
     return month;
   }
 
+  
+  /** 
+   * @return int
+   */
   public int getYear() {
     return year;
   }
 
+  
+  /** 
+   * @param d
+   * @return MyDate
+   */
   public MyDate setDay(int d) {
     if (isValid(year, month, d)) {
       day = d;
@@ -101,6 +129,11 @@ public class MyDate {
     return this;
   }
 
+  
+  /** 
+   * @param m
+   * @return MyDate
+   */
   public MyDate setMonth(int m) {
     if (isValid(year, m, day)) {
       month = m;
@@ -108,6 +141,11 @@ public class MyDate {
     return this;
   }
 
+  
+  /** 
+   * @param y
+   * @return MyDate
+   */
   public MyDate setYear(int y) {
     if (isValid(y, month, day)) {
       year = y;
@@ -135,6 +173,10 @@ public class MyDate {
     System.out.println(this.toString());
   }
 
+  
+  /** 
+   * @return String
+   */
   public String getMonthName() {
     String MonthName = "";
     switch (month) {
@@ -182,6 +224,10 @@ public class MyDate {
     System.out.println(this.day + " " + this.getMonthName() + " " + this.year);
   }
 
+  
+  /** 
+   * @return int
+   */
   public int getMonthDay() {
     if (this.month == 2) { // February
       if (this.isLeapYear()) {
@@ -196,6 +242,10 @@ public class MyDate {
     }
   }
 
+  
+  /** 
+   * @return MyDate
+   */
   public MyDate nextDate() {
     int NewDay = this.day + 1;
     int NewMonth = this.month;
@@ -231,6 +281,10 @@ public class MyDate {
     }
   }
 
+  
+  /** 
+   * @param format
+   */
   public void printFormatDate(String format) {
     String s = "";
     switch (format) {
@@ -281,6 +335,11 @@ public class MyDate {
       System.out.println(s);
   }
 
+  
+  /** 
+   * @param other
+   * @return int
+   */
   public int compareDate(MyDate other) {
     if (equals(other))
       return 0;
@@ -292,6 +351,11 @@ public class MyDate {
 
   }
 
+  
+  /** 
+   * @param other
+   * @return boolean
+   */
   public boolean equals(Object other) {
     if (other instanceof MyDate) {
       if (this.day == ((MyDate) other).day && this.month == ((MyDate) other).month
@@ -303,6 +367,13 @@ public class MyDate {
     return false;
   }
 
+  
+  /** 
+   * @param NewDay
+   * @param NewMonth
+   * @param NewYear
+   * @return MyDate
+   */
   public MyDate NextMonthYear(int NewDay, int NewMonth, int NewYear) {
     NewDay = 1;
     NewMonth++;

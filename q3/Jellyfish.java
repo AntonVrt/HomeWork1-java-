@@ -21,6 +21,10 @@ public class Jellyfish extends Swimmable {
         this.y_dir=1;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getColor()
     {
         String color = "";
@@ -82,11 +86,20 @@ public class Jellyfish extends Swimmable {
     }
 
     
+    
+    /** 
+     * @return String
+     */
     public String toString() {
       return "typs:"+getAnimalName()+"\n"+"color:"+getColor()+"\n"+ "size:"+getSize()+"\n"+"EatCount:"+getEatCount()+"\n"+"horSpeed:"+
       super.gethorSpeed()+"\n"+"verSpeed:"+super.getverSpeed()+"\n"+ "EAT_DISTANCE:" + this.EAT_DISTANCE;
     }
 
+    
+    /** 
+     * @param other
+     * @return boolean
+     */
     public boolean equals(Object other)
     {
       if(other instanceof Jellyfish)

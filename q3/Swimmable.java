@@ -14,11 +14,19 @@ public abstract class Swimmable {
         this.horSpeed=horSpeed;
         this.verSpeed=verSpeed;
     }
+    
+    /** 
+     * @param horSpeed
+     */
     public void sethorSpeed(int horSpeed)
     {
         this.horSpeed = horSpeed;
     }
 
+    
+    /** 
+     * @param verSpeed
+     */
     public void setverSpeed(int verSpeed)
     {
         this.verSpeed = verSpeed;

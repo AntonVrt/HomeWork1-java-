@@ -28,15 +28,27 @@ public class Temperature {
 
     public MyDate getscale_date(){return this.scale_date;}
 
+    
+    /** 
+     * @param scale
+     */
     public void setscale(double scale)
     {
         this.scale = scale;
     }
 
+    
+    /** 
+     * @param date
+     */
     public void setscale_date(MyDate date) 
     {
         this.scale_date = new MyDate(date);
     }
+    
+    /** 
+     * @return String
+     */
     public String toString() {
         String s = "";
         if (this.scale < 0)
@@ -63,6 +75,11 @@ public class Temperature {
     {
         System.out.println(this.toString());
     }
+    
+    /** 
+     * @param other
+     * @return Temperature
+     */
     public Temperature compareTemp(Temperature other)
     {
         if(this.scale >= other.scale)
@@ -73,6 +90,11 @@ public class Temperature {
             return other;
 
     }
+    
+    /** 
+     * @param other
+     * @return boolean
+     */
     public boolean equals(Object other) {
         if (other instanceof Temperature)
         {   
