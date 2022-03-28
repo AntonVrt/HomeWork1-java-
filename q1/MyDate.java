@@ -2,12 +2,22 @@ package q1;
 
 import java.time.LocalDate;
 
+/**
+ * class  MyDate:
+ * its job is to make a template for data object
+ * 
+ * @author Daniel Markov 318886637,Anton Volkov 323681031
+ */
+
 public class MyDate {
 
   private int day;
   private int month;
   private int year;
 
+   /**
+	 * this method is a constructor method to build a new date . it set's today's date
+	 */
   public MyDate() {
     LocalDate date = LocalDate.now();
     day = date.getDayOfMonth();
@@ -15,6 +25,12 @@ public class MyDate {
     year = date.getYear();
   }
 
+  	/**
+	 * this method is a constructor method to build a new date .
+	 * @param d - the day of the date
+	 * @param m - month of the date
+	 * @param y - the year of the date
+	 */
   public MyDate(int d, int m, int y) 
   {    
       this.year = y;
@@ -28,8 +44,20 @@ public class MyDate {
     }
   }
 
+  /** 
+   * this method is a copy constructor method to build a new date .
+   * @param other - other MyDate
+  */
+  public MyDate(MyDate other) {
+    day = other.getDay();
+    month = other.getMonth();
+    year = other.getYear();
+
+  }
+
   
   /** 
+   * help function that gets day,month and year and determines if the date is a valid date
    * @param day
    * @param month
    * @param year
@@ -72,6 +100,7 @@ public class MyDate {
 
   
   /** 
+   * this method determines if this date's year is a leap year
    * @return boolean
    */
   public boolean isLeapYear() {
@@ -86,15 +115,9 @@ public class MyDate {
     }
   }
 
-  public MyDate(MyDate other) {
-    day = other.getDay();
-    month = other.getMonth();
-    year = other.getYear();
-
-  }
-
   
   /** 
+   * get the day of the date
    * @return int
    */
   public int getDay() {
@@ -103,6 +126,7 @@ public class MyDate {
 
   
   /** 
+   * get the month of the date
    * @return int
    */
   public int getMonth() {
@@ -111,6 +135,7 @@ public class MyDate {
 
   
   /** 
+   * get the year of the date
    * @return int
    */
   public int getYear() {
@@ -119,42 +144,45 @@ public class MyDate {
 
   
   /** 
+   * set the day of the date
    * @param d
    * @return MyDate
    */
   public MyDate setDay(int d) {
-    if (isValid(year, month, d)) {
-      day = d;
+    if (isValid(d, month, year)) {
+      this.day = d;
     }
     return this;
   }
 
   
   /** 
+   * set the month of the date
    * @param m
    * @return MyDate
    */
   public MyDate setMonth(int m) {
-    if (isValid(year, m, day)) {
-      month = m;
+    if (isValid(day, m, year)) {
+      this.month = m;
     }
     return this;
   }
 
   
   /** 
+   * set the year of the date
    * @param y
    * @return MyDate
    */
   public MyDate setYear(int y) {
-    if (isValid(y, month, day)) {
-      year = y;
+    if (isValid(day, month, y)) {
+      this.year = y;
     }
     return this;
   }
 
   /**
-   * return a string representation
+   * return a string representation of a data format: xx/xx/xx
    * 
    * @return
    */
@@ -175,6 +203,7 @@ public class MyDate {
 
   
   /** 
+   * return the name of a month
    * @return String
    */
   public String getMonthName() {
@@ -220,16 +249,20 @@ public class MyDate {
     return MonthName;
   }
 
+    /** 
+   * print's the date with the month name
+   */
   public void printMonthName() {
     System.out.println(this.day + " " + this.getMonthName() + " " + this.year);
   }
 
   
   /** 
+   * this method return's the number of days in the date month
    * @return int
    */
   public int getMonthDay() {
-    if (this.month == 2) { // February
+    if (this.month == 2) { 
       if (this.isLeapYear()) {
         return 29;
       } else {
@@ -244,6 +277,7 @@ public class MyDate {
 
   
   /** 
+   * this method return's the next day date
    * @return MyDate
    */
   public MyDate nextDate() {
@@ -283,6 +317,13 @@ public class MyDate {
 
   
   /** 
+   * this method get's a string format and print's the date by this format
+   * available formats and examples:
+   * 14/03/22 – "ddmmyy" 
+      14/03/2022 – "ddmmyyyy" 
+      03/14/2022 – "mmddyyyy" 
+      2022/03/14 – "yyyymmdd" 
+      14 Mar 2022 – "ddMMyyyy"
    * @param format
    */
   public void printFormatDate(String format) {
@@ -337,6 +378,7 @@ public class MyDate {
 
   
   /** 
+   * this method get's a date compare two date's return's 0 if they are the same, -1 if the this date is smaller then the other date and 1 if this date is bigger then the other date
    * @param other
    * @return int
    */
@@ -348,11 +390,11 @@ public class MyDate {
       return 1;
     }
     return -1;
-
   }
 
   
   /** 
+   * this method return's true if two dates are equal
    * @param other
    * @return boolean
    */
@@ -369,6 +411,7 @@ public class MyDate {
 
   
   /** 
+   * help function that gets day month and year, add's a month to the date and a year if needed
    * @param NewDay
    * @param NewMonth
    * @param NewYear

@@ -3,16 +3,32 @@ package q2;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * class  Location:
+ * its job is to make a template a location name and it's Temperature's measurements
+ * 
+ * @author Daniel Markov 318886637,Anton Volkov 323681031
+ */
+
 public class Location 
 {
     private String name;
     private Temperature[] temp;
 
+    /**
+	 * this method is a constructor method to build a new Location .
+     * @param location - the location name
+	 */
     public Location(String name)
     {
         this.name = name;
         this.temp=null;
     }
+
+    /**
+	 * this method is a copy constructor method to build a new Location .
+     * @param other - other Location
+	 */
     public Location(Location other)
     {
         this.name = other.name;
@@ -23,12 +39,22 @@ public class Location
             this.temp[i] = new  Temperature(other.temp[i]);
         }
     }
+
+    /**
+	 * this method return's the name
+     * @return String
+	 */
     public String getName(){return this.name;}
 
+    /**
+	 * this method return's the temperature
+     * @return Temperature[]
+	 */
     public Temperature[] gettemperature(){return this.temp;}
 
     
     /** 
+     * this method set's the name
      * @param name
      */
     public void setname(String name)
@@ -38,6 +64,7 @@ public class Location
 
     
     /** 
+     * his method set's the temperature's
      * @param temperature
      */
     public void settemperature(Temperature[] temperature)
@@ -49,6 +76,9 @@ public class Location
         }
     }
     
+     /** 
+     * this method prints the Location
+     */
     public void printLocation ()
     {
         String s=this.name;
@@ -66,6 +96,7 @@ public class Location
 
     
     /** 
+     * this method get's a range and prints the Location
      * @param range
      */
     public void printLocation (double range)
@@ -86,6 +117,7 @@ public class Location
 
     
     /** 
+     * this method return's the avarge temprature
      * @return double
      */
     public double getAverage()
@@ -103,6 +135,7 @@ public class Location
 
     
     /** 
+     * this method gets a temprature and add's it to the temprature array
      * @param t
      * @param d
      * @param m
@@ -129,6 +162,7 @@ public class Location
 
     
     /** 
+     * this method gets a temprature and add's it to the temprature array
      * @param t
      */
     public void addTemp (double t)
@@ -153,6 +187,7 @@ public class Location
 
     
     /** 
+     * this method return's the max temperature
      * @return Temperature
      */
     public Temperature getMax ()
@@ -168,7 +203,7 @@ public class Location
         return max;
     }
 
-    	/**
+    /**
 	 * this method return a string with the location name and Temperature array 
 	 * @return location name and Temperature type array in a string form
 	 */
@@ -188,7 +223,8 @@ public class Location
 
     
     /** 
-     * @param other
+     * this method get's an other Location and return true if this Location equal's to the other
+     * @param other - other Location
      * @return boolean
      */
     public boolean equals(Object other) 
