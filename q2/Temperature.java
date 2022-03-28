@@ -14,6 +14,15 @@ public class Temperature {
     private MyDate scale_date;
 
     /**
+	* this method is a constructor method to build a new temperature .
+    */
+    public Temperature()
+    {
+        this.scale=0;
+        this.scale_date = null;
+    }
+    
+    /**
 	 * this method is a constructor method to build a new temperature .
      * @param scale - the temperature's scale.
      * @param d - the day of the date

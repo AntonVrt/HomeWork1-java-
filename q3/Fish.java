@@ -12,6 +12,19 @@ public class Fish extends Swimmable {
     private int x_dir;
     private int y_dir;
 
+
+    /**
+	  * this method is a constructor method to build a new Fish .
+    * @param size - the size of the fish.
+    * @param col - the color of the fish.
+	  * @param eatCount - count of the eating.
+	  * @param x_front - move straight on x scale.
+    * @param x_dir - move back on x scale.
+    * @param y_dir -  move back on y scale.
+    * @param y_front -  move straight on y scale.
+    * @param horSpeed -  horizantal speed
+    * @param verSpeed -  vertical speed
+	  */
     public Fish(int size, int x_front, int y_front,int horSpeed, int verSpeed, int col)
     {
         super(horSpeed,verSpeed);
@@ -24,8 +37,24 @@ public class Fish extends Swimmable {
         this.y_dir=1;
     }
 
+    /**
+	  * this method is a copy constructor method to build a new Fish .
+    * @param other - other Fish
+	  */
+    public Fish(Fish other )
+    {
+      super(other.gethorSpeed(),other.getverSpeed());
+      this.size = other.getSize();
+      this.col = other.getcol();
+      this.eatCount = other.getEatCount();
+      this.x_dir = other.getx_dir();
+      this.x_front = other.getx_front();
+      this.y_dir = other.gety_dir();
+      this.y_front = other.gety_front();
+    }
     
     /** 
+     * return a string representation of the color: 
      * @return String
      */
     public String getColor()
@@ -63,12 +92,17 @@ public class Fish extends Swimmable {
         return color;
     }
 
+    /**
+    * return name  fish
+    */
     public String getAnimalName() {return "Fish";}
 
     public int getEatCount() {return this.eatCount;}
 
     public int getSize() {return this.size;}
 
+    public int getcol() {return this.col;}
+    
     public int getx_front() {return this.x_front;}
 
     public int gety_front() {return this.y_front;}
@@ -77,6 +111,9 @@ public class Fish extends Swimmable {
 
     public int gety_dir() {return this.y_dir;}
 
+    /**
+    * increase the eatCount if its get over the EAT_DISTANCE the size is increased
+    */
     public void eatInc()
      {
       this.eatCount+=1;
@@ -87,8 +124,14 @@ public class Fish extends Swimmable {
       }
     }
 
+    /**
+    * change the size of the Fish
+    */
     public void changeFish(int size){this.size=size;}
 
+    /**
+    * change the color of the Fish
+    */
     public void changeColor()
     {
       this.col++;
@@ -96,9 +139,15 @@ public class Fish extends Swimmable {
         this.col =1;
     }
 
-
-    
     /** 
+     * return a string representation of a Fish format: 
+     * typs:animal name
+     * color:color anme 
+     * size: size 
+     * EatCount: count of eat
+     * horSpeed: hor speed
+     * verSpeed: verspeed 
+     * EAT_DISTANCE: eat distance
      * @return String
      */
     public String toString()
@@ -109,6 +158,7 @@ public class Fish extends Swimmable {
     
     
     /** 
+     * this method get's an other Fish and return true if this Fish equal's to the other
      * @param other
      * @return boolean
      */

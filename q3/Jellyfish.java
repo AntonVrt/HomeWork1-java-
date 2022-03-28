@@ -10,6 +10,34 @@ public class Jellyfish extends Swimmable {
     private int x_dir;
     private int y_dir;
 
+    /**
+	  * this method is a copy constructor method to build a new Jellyfish.
+    * @param other - other Jellyfish
+	  */
+    public Jellyfish(Jellyfish other )
+    {
+      super(other.gethorSpeed(),other.getverSpeed());
+      this.size = other.getSize();
+      this.col = other.getcol();
+      this.eatCount = other.getEatCount();
+      this.x_dir = other.getx_dir();
+      this.x_front = other.getx_front();
+      this.y_dir = other.gety_dir();
+      this.y_front = other.gety_front();
+    }
+    
+  /**
+	* this method is a constructor method to build a new MultiColorFish .
+  * @param size - the size of the fish.
+  * @param col - the color of the fish.
+	* @param eatCount - count of the eating.
+	* @param x_front - move straight on x scale.
+  * @param x_dir - move back on x scale.
+  * @param y_dir -  move back on y scale.
+  * @param y_front -  move straight on y scale.
+  * @param horSpeed -  horizantal speed
+  * @param verSpeed -  vertical speed
+	*/
     public Jellyfish(int size, int x_front, int y_front,int horSpeed, int verSpeed, int col)
     {
         this.size=size;
@@ -23,6 +51,7 @@ public class Jellyfish extends Swimmable {
 
     
     /** 
+    * return a string representation of the color: 
      * @return String
      */
     public String getColor()
@@ -60,12 +89,19 @@ public class Jellyfish extends Swimmable {
         return color;
     }
 
+    /**
+    * return name  Jellyfish
+    * @return String
+    */
     public String getAnimalName() {return "Jellyfish";}
 
     public int getEatCount() {return this.eatCount;}
 
     public int getSize() {return this.size;}
 
+    /**
+    * increase the eatCount if its get over the EAT_DISTANCE the size is increased
+    */
     public void eatInc() 
     {
       this.eatCount+=1;
@@ -76,8 +112,25 @@ public class Jellyfish extends Swimmable {
       }
     }
 
+    /** 
+    * this method get's other size change the size of the Jellyfish
+    * @param size
+    */
     public void changeJellyfish(int size){this.size=size;}
 
+    public int getx_front() {return this.x_front;}
+
+    public int gety_front() {return this.y_front;}
+
+    public int getx_dir() {return this.x_dir;}
+
+    public int gety_dir() {return this.y_dir;}
+
+    public int getcol() {return this.col;}
+
+    /**
+    * change the color of the Fish
+    */
     public void changeColor()
     {
       this.col++;
@@ -85,9 +138,15 @@ public class Jellyfish extends Swimmable {
         this.col =1;
     }
 
-    
-    
     /** 
+     * return a string representation of a Jellyfish format: 
+     * typs:animal name
+     * color:color anme 
+     * size: size 
+     * EatCount: count of eat
+     * horSpeed: hor speed
+     * verSpeed: verspeed 
+     * EAT_DISTANCE: eat distance
      * @return String
      */
     public String toString() {
@@ -97,6 +156,7 @@ public class Jellyfish extends Swimmable {
 
     
     /** 
+     * this method get's an other Jellyfish and return true if this Jellyfish equal's to the other
      * @param other
      * @return boolean
      */
@@ -104,14 +164,19 @@ public class Jellyfish extends Swimmable {
     {
       if(other instanceof Jellyfish)
       {
-        if(super.equals())
-
-        
+        if(super.gethorSpeed() == ((Fish)other).gethorSpeed() && super.getverSpeed() == ((Fish)other).getverSpeed() 
+        && this.getColor().equals(((Fish)other).getColor()) == true 
+        && this.getSize() == ((Fish)other).getSize() && this.getEatCount() == ((Fish)other).getEatCount() && 
+        this.getx_front() == ((Fish)other).getx_front() && this.gety_front() == ((Fish)other).gety_front() 
+        && this.getx_dir() == ((Fish)other).getx_dir() && this.gety_dir() == ((Fish)other).gety_dir())
+          return true;
+        else     
+          return false;   
       }
       else  
         return false;
       
-    {}
+    }
 
     
 }

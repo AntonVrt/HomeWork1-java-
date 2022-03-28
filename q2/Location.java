@@ -15,6 +15,15 @@ public class Location
     private String name;
     private Temperature[] temp;
 
+     /**
+	 * this method is a constructor method to build a new Location .
+	 */
+    public Location()
+    {
+        this.name = null;
+        this.temp=null;
+    }
+
     /**
 	 * this method is a constructor method to build a new Location .
      * @param location - the location name
