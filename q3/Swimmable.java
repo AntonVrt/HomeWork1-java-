@@ -1,5 +1,11 @@
 package q3;
 
+/**
+ * class  Swimmable:
+ * this calss is the bais of the all calsses we have is q3
+ *
+ * @author Daniel Markov 318886637,Anton Volkov 323681031
+ */
 public abstract class Swimmable {
     private int horSpeed;
     private int verSpeed;

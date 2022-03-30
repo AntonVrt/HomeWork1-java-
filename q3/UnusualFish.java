@@ -1,5 +1,11 @@
 package q3;
 
+/**
+ * class  UnusualFish:
+ * this calss is extands from fish class. in this class we have more method in addition to fish mathod
+ *
+ * @author Daniel Markov 318886637,Anton Volkov 323681031
+ */
 public class UnusualFish extends Fish {
     private int factor;
 
