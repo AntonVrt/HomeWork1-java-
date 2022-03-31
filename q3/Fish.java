@@ -6,7 +6,7 @@ import javax.lang.model.util.ElementScanner6;
  * class  Fish:
  * its a basic class of the fish
  * 
- * @author Daniel Markov 318886637,Anton Volkov 323681031
+ * @author Daniel Markov ,Anton Volkov 
  */
 public class Fish extends Swimmable {
     private int EAT_DISTANCE=4;

@@ -11,7 +11,7 @@ import java.util.Hashtable;
  * class  Utility:
  * contains static methods
  * 
- * @author Daniel Markov 318886637,Anton Volkov 323681031
+ * @author Daniel Markov ,Anton Volkov 
  */
 
 public class Utility {

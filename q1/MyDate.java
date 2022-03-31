@@ -6,7 +6,7 @@ import java.time.LocalDate;
  * class  MyDate:
  * its job is to make a template for data object
  * 
- * @author Daniel Markov 318886637,Anton Volkov 323681031
+ * @author Daniel Markov ,Anton Volkov 
  */
 
 public class MyDate {

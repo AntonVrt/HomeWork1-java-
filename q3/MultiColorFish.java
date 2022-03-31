@@ -4,7 +4,7 @@ package q3;
  * class  MultiColorFish:
  * this calss is extands from fish class. in this class we have more method in addition to fish mathod
  *
- * @author Daniel Markov 318886637,Anton Volkov 323681031
+ * @author Daniel Markov ,Anton Volkov 
  */
 public class MultiColorFish extends Fish {
 

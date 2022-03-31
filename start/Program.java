@@ -12,7 +12,7 @@ import q3.UnusualFish;
  * class  Program:
  * its job is to run the main.
  * 
- * @author Daniel Markov 318886637,Anton Volkov 323681031
+ * @author Daniel Markov ,Anton Volkov 
  */
 
 public class Program {

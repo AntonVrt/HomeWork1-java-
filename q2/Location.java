@@ -7,7 +7,7 @@ import java.util.List;
  * class  Location:
  * its job is to make a template a location name and it's Temperature's measurements
  * 
- * @author Daniel Markov 318886637,Anton Volkov 323681031
+ * @author Daniel Markov ,Anton Volkov 
  */
 
 public class Location 

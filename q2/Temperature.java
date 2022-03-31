@@ -6,7 +6,7 @@ import q1.MyDate;
  * class  Temperature:
  * its job is to make a template for Temperature object that contain's a sclae and a date
  * 
- * @author Daniel Markov 318886637,Anton Volkov 323681031
+ * @author Daniel Markov ,Anton Volkov 
  */
 
 public class Temperature {
