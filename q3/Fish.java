@@ -99,22 +99,51 @@ public class Fish extends Swimmable {
     }
 
     /**
-    * return name  fish
+    * return name of fish
+    * @return String
     */
     public String getAnimalName() {return "Fish";}
 
+    /**
+    * return eatCount of fish
+    * @return int
+    */
     public int getEatCount() {return this.eatCount;}
 
+    /**
+    * return size of fish
+    * @return int
+    */
     public int getSize() {return this.size;}
 
+    /**
+    * return col of fish
+    * @return int
+    */
     public int getcol() {return this.col;}
     
+    /**
+    * return x_front of fish
+    * @return int
+    */
     public int getx_front() {return this.x_front;}
 
+    /**
+    * return y_front of fish
+    * @return int
+    */
     public int gety_front() {return this.y_front;}
 
+    /**
+    * return x_dir of fish
+    * @return int
+    */
     public int getx_dir() {return this.x_dir;}
 
+    /**
+    * return y_dir of fish
+    * @return int
+    */
     public int gety_dir() {return this.y_dir;}
 
     /**

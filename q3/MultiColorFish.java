@@ -32,6 +32,10 @@ public class MultiColorFish extends Fish {
         super(size, x_front, y_front, verSpeed, horSpeed, col);
     }
 
+    /**
+    * return name MultiColorFish
+    * @return String
+    */
     public String getAnimalName() {return "MultiColorFish";}
 
     

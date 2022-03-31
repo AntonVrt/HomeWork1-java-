@@ -101,8 +101,17 @@ public class Jellyfish extends Swimmable {
     */
     public String getAnimalName() {return "Jellyfish";}
 
+    
+    /**
+    * return eatCount of fish
+    * @return int
+    */
     public int getEatCount() {return this.eatCount;}
 
+    /**
+    * return size of fish
+    * @return int
+    */
     public int getSize() {return this.size;}
 
     /**
@@ -124,14 +133,34 @@ public class Jellyfish extends Swimmable {
     */
     public void changeJellyfish(int size){this.size=size;}
 
+    /**
+    * return x_front of fish
+    * @return int
+    */
     public int getx_front() {return this.x_front;}
 
+    /**
+    * return y_front of fish
+    * @return int
+    */
     public int gety_front() {return this.y_front;}
 
+    /**
+    * return x_dir of fish
+    * @return int
+    */
     public int getx_dir() {return this.x_dir;}
 
+    /**
+    * return y_dir of fish
+    * @return int
+    */
     public int gety_dir() {return this.y_dir;}
 
+    /**
+    * return col of fish
+    * @return int
+    */
     public int getcol() {return this.col;}
 
     /**
@@ -182,7 +211,5 @@ public class Jellyfish extends Swimmable {
       else  
         return false;
       
-    }
-
-    
+    } 
 }

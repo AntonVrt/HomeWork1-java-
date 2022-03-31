@@ -49,8 +49,16 @@ public abstract class Swimmable {
         this.verSpeed = verSpeed;
     }
 
+    /**
+    * return horSpeed of Swimmable
+    * @return int
+    */
     public int gethorSpeed(){return this.horSpeed;}
 
+   /**
+    * return verSpeed of Swimmable
+    * @return int
+    */
     public int getverSpeed(){return this.verSpeed;}
 
     public abstract String getAnimalName();

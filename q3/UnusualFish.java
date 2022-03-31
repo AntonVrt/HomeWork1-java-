@@ -37,10 +37,24 @@ public class UnusualFish extends Fish {
         this.factor=factor;
     }
 
+    /**
+    * return factor of UnusualFish
+    * @return int
+    */
     public int getfactor() {return this.factor;}
+    
     public void setfactor(int factor) {this.factor=factor;}
 
+    /**
+    * return size of UnusualFish
+    * @return int
+    */
     public int getSize() {return this.factor*super.getSize();}
+
+    /**
+    * return UnusualFish
+    * @return String
+    */
     public String getAnimalName() {return "UnusualFish";}
 
  
